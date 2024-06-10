@@ -1,12 +1,27 @@
-const container = document.querySelector(".grid-container");
+const canvas = document.querySelector(".grid-container");
 
-for (let i = 0; i < 16; i++) {
-    for (let j = 0; j < 16; j++) {
-        const newDiv = document.createElement("div");
-        newDiv.className = "box";
-        newDiv.style.width = "30px";
-        newDiv.style.height = "30px";
-        newDiv.style.backgroundColor = "brown";
-        container.appendChild(newDiv);
+function createGrid(gridSize) {
+    for (let row = 0; row < gridSize; row++) {
+        const gridRow = document.createElement("div");
+        gridRow.setAttribute("class", "row");
+        canvas.appendChild(gridRow);
+
+        for (let i  = 0; i < gridSize; i++) {
+            const square = document.createElement("div");
+            square.setAttribute("class", "square");
+            gridRow.appendChild(square);
+        }
+        /*
+        <div class="grid-container">
+            <div class="row"></div>
+                <div class="square">
+                <div .....
+            <div.......
+        </div>
+        */
     }
+
+
 }
+
+createGrid(16);
